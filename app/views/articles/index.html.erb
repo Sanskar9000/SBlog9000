@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<style>
+	table,tr,th,td{
+		border: 2px solid black;
+		border-collapse: collapse;
+	}
+	th,td{
+		padding-left: 2rem;
+		padding-right: 2rem;
+	}
+	button{
+		margin: .5rem;
+	}
+	a{
+		color: black;
+		text-decoration: none;
+	}
+</style>
+<body>
+	<center>
+	<h1>Articles Index Page</h1>
+	<table>
+		<thead>
+			<tr>
+				<th><h3>Title</h3></th>
+				<th>Description</th>
+				<th>Actions</th>
+			</tr>
+		</thead>
+		<tbody>
+			<% @articles.each do |article| %>
+			<tr>
+				<td><a href="/articles/<%=article.id%>"><%= article.title%></a></td>
+				<td><%= article.description%></td>
+				<td id="buttons"><button>Show</button><button>Edit</button><button>Delete</button></td>
+			</tr>
+			<%end%>
+		</tbody>
+	</table>
+	</center>
+</body>
+</html>
