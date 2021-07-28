@@ -6,7 +6,7 @@
 	<title>Document</title>
 </head>
 <body>
-	<h1>Create new Article</h1>
+	<h1>Edit Article</h1>
 
 	<% if @article.errors.any?  %>
 	    <h2>There are these following errors in the form submit</h2>
@@ -17,7 +17,7 @@
 	    </ul>
 	<% end %>
 
-	<%= form_with scope: :article, url: articles_path, local: true do |f| %>
+	<%= form_with(model: @article, local: true)  do |f| %>
 	  <p>
 	  	<%= f.label :title%><br/>
 	  	<%= f.text_field :title %>
@@ -30,7 +30,6 @@
 	  	<%= f.submit%>
 	  </p>
 	<% end %>
-	<br>
-	<%= link_to 'Return to Articles', articles_path%>
+	<%= link_to 'Cancel Edit and go back', articles_path%>
 </body>
 </html>
