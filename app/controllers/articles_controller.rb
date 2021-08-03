@@ -1,4 +1,6 @@
 class ArticlesController < ApplicationController
+
+
 	# shows a single article
 	def show
 	 	@article = Article.find(params[:id])
@@ -43,4 +45,6 @@ class ArticlesController < ApplicationController
 		@article.destroy
 		redirect_to articles_path
 	end
+
+
 end
